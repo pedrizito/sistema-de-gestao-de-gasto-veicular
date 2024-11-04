@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	    <meta charset="UTF-8">
+	    <title th:text="${title}">Gestão de Gasto Veicular</title>
+	    <link rel="stylesheet" th:href="@{/materialize/css/materialize.min.css}" media="screen,projection"/>
+	    <link rel="stylesheet" th:href="@{/css/styles.css}">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	</head>
+	<body>
+	<!-- HEADER START -->
+	    <header>
+			<nav class="menu">
+			    <div class="nav-wrapper customColor01">
+			      <a href="#" class="brand-logo">Sistema de Gestão de Gasto Veicular</a>
+			      <ul id="nav-mobile" class="right hide-on-med-and-down ">
+			        <li><a href="/salvarVeiculo" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Veículos</a></li>
+			        <li><a href="/veiculos" class="waves-effect waves-light btn"><i class="material-icons left">list</i>Consultar Veículos</a></li>
+			        <li><a href="/gastos" class="waves-effect waves-light btn"><i class="material-icons left">list</i>Consultar Gastos</a></li>
+			      </ul>
+			    </div>
+			</nav>	
+		</header>
+	<!-- HEADER END -->
+		
+		<main>
+			<table class="container">
+		<thead>
+			<tr>
+				<th>Placa</th>
+				<th>Marca</th>
+				<th>Modelo</th>
+				<th>Ano</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="veiculo : ${veiculos}">
+				<td><a th:href="${(#mvc.url('VC#editarVeiculo').arg(0, veiculo.placa)).build()}"><span th:text="${veiculo.placa}"></span></a></td>
+				<td><span th:text="${veiculo.marca}"></span></td>
+				<td><span th:text="${veiculo.modelo}"></span></td>
+				<td><span th:text="${veiculo.ano}"></span></td>
+				<td>
+					<a th:href="${(#mvc.url('VC#deletarVeiculo').arg(0, veiculo.placa)).build()}" onclick="return confirmarDelecao();"><i class="material-icons left">delete</i></a>
+					<a th:href="${(#mvc.url('VC#editarVeiculo').arg(0, veiculo.placa)).build()}"><i class="material-icons left">edit</i></a>
+				</td> 
+			</tr>
+		</tbody>
+	
+	</table>
+		
+		</main>
+		
+		
+	
+	<!-- FOOTER START -->
+	    <footer class="customColor01">
+	        <p>&copy; 2024 - Gestão de Gasto Veicular</p>
+	    </footer>
+	<!-- FOOTER START -->
+	
+	    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	    <script>
+	        function confirmarDelecao() {
+	            return confirm('Tem certeza de que deseja deletar este veículo?');
+	        }
+   		</script>
+	</body>
+</html>
+
+	

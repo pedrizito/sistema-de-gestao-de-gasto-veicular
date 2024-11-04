@@ -1,0 +1,84 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.customColor01{
+	background-color: #333;
+}
+
+.formBox{
+	box-shadow: 0px 0px 5px grey;
+	padding: 30px;
+	margin: 30px auto;
+}
+
+.formVeiculo {
+	max-width: 450px;
+}
+
+.captalizeCaseText{
+       text-transform: capitalize;
+}
+
+.upperCaseText{
+       text-transform: uppercase;
+}
+
+.gastoTableHeight {
+	margin-top: 10px;
+    max-height: 600px;
+    overflow-y: auto;
+    display: block;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1; 
+}
+
+.marginTop10px{
+	margin-top: 10px;
+}
+
+select{
+	display: inline;
+}
+
+.mensagemErro{
+	margin-top: 10px;
+	display: block;
+	color: red;
+}
+.barraFiltro{
+	display: flex;
+}
+
+.barraPesquisa{
+	display: flex;
+	padding: 10px;
+	margin: 10px 0 px;
+	max-width: 450px;
+}
+
+.barraPesquisa input-field{
+	width: 200px
+	
+}

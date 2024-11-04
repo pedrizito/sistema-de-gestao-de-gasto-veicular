@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	    <meta charset="UTF-8">
+	    <title th:text="${title}">Gestão de Gasto Veicular</title>
+	    <link rel="stylesheet" th:href="@{/materialize/css/materialize.min.css}" media="screen,projection"/>
+	    <link rel="stylesheet" th:href="@{/css/styles.css}">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	</head>
+	<body>
+	<!-- HEADER START -->
+	    <header>
+			<nav class="menu">
+			    <div class="nav-wrapper customColor01">
+			      <a href="#" class="brand-logo">Sistema de Gestão de Gasto Veicular</a>
+			      <ul id="nav-mobile" class="right hide-on-med-and-down ">
+			        <li><a href="/salvarVeiculo" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Veículos</a></li>
+			        <li><a href="/veiculos" class="waves-effect waves-light btn"><i class="material-icons left">list</i>Consultar Veículos</a></li>
+			        <li><a href="/gastos" class="waves-effect waves-light btn"><i class="material-icons left">list</i>Consultar Gastos</a></li>
+			      </ul>
+			    </div>
+			</nav>	
+		</header>
+	<!-- HEADER END -->
+		
+		<main class="container">
+		
+		</main>
+		
+		
+	
+	<!-- FOOTER START -->
+	    <footer class="customColor01">
+	        <p>&copy; 2024 - Gestão de Gasto Veicular</p>
+	    </footer>
+	<!-- FOOTER START -->
+	
+	    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	</body>
+</html>
+
+	

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	    <meta charset="UTF-8">
+	    <title th:text="${title}">Gestão de Gasto Veicular</title>
+	    <link rel="stylesheet" th:href="@{/materialize/css/materialize.min.css}" media="screen,projection"/>
+	    <link rel="stylesheet" th:href="@{/css/styles.css}">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	</head>
+	<body>
+	<!-- HEADER START -->
+	    <header>
+			<nav class="menu">
+			    <div class="nav-wrapper customColor01">
+			      <a href="#" class="brand-logo">Sistema de Gestão de Gasto Veicular</a>
+			      <ul id="nav-mobile" class="right hide-on-med-and-down ">
+			        <li><a href="/salvarVeiculo" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Veículos</a></li>
+			        <li><a href="/veiculos" class="waves-effect waves-light btn"><i class="material-icons left">list</i>Consultar Veículos</a></li>
+			        <li><a href="/gastos" class="waves-effect waves-light btn"><i class="material-icons left">list</i>Consultar Gastos</a></li>
+			      </ul>
+			    </div>
+			</nav>	
+		</header>
+	<!-- HEADER END -->
+		
+		<main>
+        <div class="container formBox formVeiculo">
+            <form method="post">
+                <div class="row">
+                    <div class="input-field">
+                        Veiculo: <input name="veiculo" th:object="${veiculo}" type="text" th:field="*{placa}" class="upperCaseText" title="Padrão Mercosul" maxlength="7" readonly pattern="[A-Za-z]{3}[0-9]{1}[A-Za-z]{1}[0-9]{2}" required/>
+                    </div>
+                    	Tipo:
+                    <div>
+                        <select name="tipoDeGasto">
+                        	 <option value="" disabled selected></option>
+							  <option value="MANUTENCAO_PREVENTIVA">Manutenção Preventiva</option>
+							  <option value="MANUTENCAO_CORRETIVA">Manutenção Corretiva</option>
+							  <option value="IMPOSTO">Imposto</option>
+							  <option value="ACESSORIO">Acessório</option>
+							  <option value="LIMPEZA">Limpeza</option>
+							  <option value="SEGURO">Seguro</option>
+							  <option value="COMBUSTIVEL">Combustível</option>
+							  <option value="OUTRO">Outro</option>
+						</select>
+                    </div>
+                    <div class="input-field">
+                        Valor: <input type="text" pattern="^\d+(\.\d{1,2})?$" name="valor" required/>
+                    </div>
+                    <div class="input-field">
+                        Data: <input type="date" name="data" required/>
+                    </div>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+            </form>
+        </div>
+    </main>
+		
+	
+	<!-- FOOTER START -->
+	    <footer class="customColor01">
+	        <p>&copy; 2024 - Gestão de Gasto Veicular</p>
+	    </footer>
+	<!-- FOOTER START -->
+	
+	    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	    <script>
+		    document.addEventListener('DOMContentLoaded', function() {
+		        var elems = document.querySelectorAll('select');
+		        var instances = M.FormSelect.init(elems, options);
+		      });
+	    </script>
+	</body>
+</html>
+
+	
